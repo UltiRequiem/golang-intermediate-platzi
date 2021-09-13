@@ -34,7 +34,11 @@ func maps() {
 func slices() {
 	myNumbers := []int{1, 2, 3}
 
+	// Add a value like:
+	myNumbers = append(myNumbers, 4)
+
 	for index, value := range myNumbers {
 		fmt.Println(fmt.Sprintf("The index of %d is %d.", value, index))
 	}
+
 }

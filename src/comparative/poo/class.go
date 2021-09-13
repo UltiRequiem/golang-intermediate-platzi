@@ -4,26 +4,27 @@ package main
 import "fmt"
 
 type GoEmployee struct {
-	name string
-	id   int
-}
-
-func (e GoEmployee) doWork() {
-	fmt.Printf(fmt.Sprintf("%s (%d) is working with Golang code.", e.name, e.id))
+	Name string
+	Id   int
 }
 
 func (e GoEmployee) String() string {
-	return fmt.Sprintf("ID: %d, Name: %s", e.id, e.name)
+	return fmt.Sprintf("Id: %d, Name: %s", e.Id, e.Name)
+}
+
+func (e *GoEmployee) SetName(name string) {
+	e.Name = name
+}
+
+func (e *GoEmployee) SetId(id int) {
+	e.Id = id
 }
 
 func main() {
-	e := GoEmployee{name: "Zero", id: 0}
+	e := GoEmployee{Name: "Zero", Id: 8965}
 
-	e.id = 44
-
-	e.name = "Eliaz"
+        e.SetName("Eliaz")
+        e.SetId(44)
 
 	fmt.Println(e)
-
-	e.doWork()
 }

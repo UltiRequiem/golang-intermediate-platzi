@@ -1,6 +1,6 @@
 // They like to complicate their lives xD
 // Javascript FTW
-class Employee {
+class TSEmployee {
   private employeeNick: string;
   private id: number;
 
@@ -26,7 +26,7 @@ class Employee {
   }
 }
 
-const myEmployee = new Employee(999, "Default");
+const myEmployee = new TSEmployee(999, "Default");
 
 console.log(myEmployee.getId());
 console.log(myEmployee.getEmployeeNick());

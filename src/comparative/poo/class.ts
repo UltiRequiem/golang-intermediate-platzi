@@ -1,14 +1,20 @@
 // They like to complicate their lives xD
+// Javascript FTW
 class Employee {
-  private name: string;
+  private employeeNick: string;
   private id: number;
 
-  public getName(): string {
-    return this.name;
+  constructor(id: number, nick: string) {
+    this.employeeNick = nick;
+    this.id = id;
   }
 
-  public setName(name: string) {
-    this.name = name;
+  public getEmployeeNick(): string {
+    return this.employeeNick;
+  }
+
+  public setEmployeeNick(nick: string) {
+    this.employeeNick = nick;
   }
 
   public getId(): number {
@@ -19,3 +25,16 @@ class Employee {
     this.id = id;
   }
 }
+
+const myEmployee = new Employee(999, "Default");
+
+console.log(myEmployee.getId());
+console.log(myEmployee.getEmployeeNick());
+
+// Uṕdate Properties
+
+myEmployee.setEmployeeNick("Zero");
+myEmployee.setId(7777);
+
+console.log(myEmployee.getId());
+console.log(myEmployee.getEmployeeNick());

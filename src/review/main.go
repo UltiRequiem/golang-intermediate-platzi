@@ -17,8 +17,24 @@ func managingErrors() {
 
 	if err != nil {
 		fmt.Printf("%v", err)
-                return
+		return
 	}
 
-        fmt.Println(value)
+	fmt.Println(fmt.Sprintf("The formated number is %d", value))
+}
+
+func maps() {
+	m := make(map[string]int)
+
+	m["myFavoriteNumber"] = 6
+
+	fmt.Println(fmt.Sprintf("My favorite number is %d.", m["myFavoriteNumber"]))
+}
+
+func slices() {
+	myNumbers := []int{1, 2, 3}
+
+	for index, value := range myNumbers {
+		fmt.Println(fmt.Sprintf("The index of %d is %d.", value, index))
+	}
 }

@@ -20,10 +20,24 @@ type FullTimeEmployee struct {
 	Employee
 }
 
+type TemporaryEmployee struct {
+	Person
+	Employee
+	TimeToWork int
+}
+
 func newFullTimeEmployee(name string, age int, id int) *FullTimeEmployee {
 	return &FullTimeEmployee{
 		Person{Name: name, Age: age},
 		Employee{Id: id},
+	}
+}
+
+func newTemporaryEmployee(name string, age int, id int, timeToWork int) *TemporaryEmployee {
+	return &TemporaryEmployee{
+		Person:     Person{Name: name, Age: age},
+		Employee:   Employee{Id: id},
+		TimeToWork: timeToWork,
 	}
 }
 
@@ -37,5 +51,8 @@ func PrintName(h Human) {
 
 func main() {
 	aFullTimeEmployee := newFullTimeEmployee("Zero", 14, 99)
+	aTemporaryEmployee := newTemporaryEmployee("One", 16, 34, 3)
+
 	PrintName(aFullTimeEmployee)
+	PrintName(aTemporaryEmployee)
 }

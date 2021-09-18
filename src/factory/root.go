@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // Interfaces
 
@@ -60,4 +62,36 @@ func (EmailNotificationSender) GetSenderMethod() string {
 
 func (EmailNotificationSender) GetSenderChannel() string {
 	return "SES"
+}
+
+// Interfaces Methods
+
+func getNotificationFactory(notificationType string) (INotificationFactory, error) {
+	switch notificationType {
+	case "SMS":
+		return &SMSNotification{}, nil
+	case "EMAIL":
+		return &EmailNotification{}, nil
+	}
+
+	return nil, fmt.Errorf(`"%s" is not a valid notification type.`, notificationType)
+}
+
+func sendNotification(f INotificationFactory) {
+	f.SendNotification()
+}
+
+func getMethod(f INotificationFactory) {
+	fmt.Println(f.GetSender().GetSenderMethod())
+}
+
+func main() {
+	smsFactory, _ := getNotificationFactory("SMS")
+	emailFactory, _ := getNotificationFactory("EMAIL")
+
+	sendNotification(smsFactory)
+	sendNotification(emailFactory)
+
+	getMethod(smsFactory)
+	getMethod(emailFactory)
 }

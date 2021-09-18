@@ -4,12 +4,13 @@ package main
 import "fmt"
 
 type GoEmployee struct {
-	Name string
-	Id   int
+	Name   string
+	Id     int
+	canFly bool
 }
 
 func (e GoEmployee) String() string {
-	return fmt.Sprintf("Id: %d, Name: %s", e.Id, e.Name)
+	return fmt.Sprintf("Id: %d, Name: %s, Can Fly: %t.", e.Id, e.Name, e.canFly)
 }
 
 func (e *GoEmployee) SetName(name string) {
@@ -20,11 +21,19 @@ func (e *GoEmployee) SetId(id int) {
 	e.Id = id
 }
 
-func main() {
-	e := GoEmployee{Name: "Zero", Id: 8965}
+func newGoEmployee(name string, id int, canFly bool) *GoEmployee {
+	return &GoEmployee{
+		Name:   name,
+		Id:     id,
+		canFly: canFly,
+	}
+}
 
-        e.SetName("Eliaz")
-        e.SetId(44)
+func main() {
+	e := newGoEmployee("Zero", 34, true)
+
+	e.SetName("Eliaz")
+	e.SetId(44)
 
 	fmt.Println(e)
 }

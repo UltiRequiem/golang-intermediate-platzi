@@ -9,4 +9,4 @@
 
 ### License
 
-Licensed under the [MIT License](./LICENSE.md)
+Licensed under the [MIT License](./LICENSE.md).

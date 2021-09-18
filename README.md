@@ -6,3 +6,7 @@
 ![CodeQL](https://github.com/UltiRequiem/golang-intermediate-platzi/workflows/CodeQL/badge.svg)
 
 ![Cover](./.github/assets/cover.png)
+
+### License
+
+Licensed under the [MIT License](./LICENSE.md)

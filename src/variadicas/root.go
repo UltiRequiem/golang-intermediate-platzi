@@ -16,7 +16,6 @@ func areFriends(names ...string) {
 	var totalFriends int = len(names)
 
 	switch totalFriends {
-
 	case 1:
 		message = fmt.Sprintf("%s has no friends.", names[0])
 	case 2:

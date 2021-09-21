@@ -7,6 +7,10 @@
 
 ![Cover](./.github/assets/cover.png)
 
+## Design Patterns
+
+![Design Patterns Meme](./.github/assets/dessingPatterns.jpg)
+
 ### License
 
 Licensed under the [MIT License](./LICENSE.md).

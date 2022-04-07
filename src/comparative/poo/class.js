@@ -30,4 +30,4 @@ const me = new JSEmployee({ id: 999, name: "Zero" });
 
 console.log(me.name);
 console.log(me.id);
-console.log(me.doWork())
+console.log(me.doWork());
